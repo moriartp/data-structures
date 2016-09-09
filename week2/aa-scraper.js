@@ -1,7 +1,7 @@
 var fs = require('fs');
 var cheerio = require('cheerio');
 
-var content = fs.readFileSync('/home/ubuntu/workspace/week2/UESAA.txt');
+var content = fs.readFileSync('/home/ubuntu/workspace/week2/UESAA.html');
 
 var $ = cheerio.load(content);
 
@@ -15,9 +15,27 @@ var $ = cheerio.load(content);
 //     }
 // })
 
+// // // V1 SCRAPED Bs
+// // Print to console: all reading assignments
+// $('td').each(function(i, elem) {
+//         $(elem).find('b').each(function(i, elem) {
+//             console.log($(elem).text());
+//         });
+// })
+
+// // V1 SCRAPED Bs
+// // Print to console: all reading assignments
+// $('tbody').each(function(i, elem) {
+//         $(elem).find('tr').each(function(i, elem) {
+//             console.log($(elem).text());
+//         });
+// })
+
+// // V1 SCRAPED Bs
 // Print to console: all reading assignments
-$('td').each(function(i, elem) {
-        $(elem).find('b').each(function(i, elem) {
+$('tbody').each(function(i, elem) {
+        $(elem).find('td').each(function(i, elem) {
             console.log($(elem).text());
         });
 })
+
