@@ -52,5 +52,5 @@ $('tbody').find('tr').each(function(i, elem){
     });
 
 console.log(meetings.length); // print number of meetings in meetings array
-fs.writeFileSync('/home/ubuntu/workspace/week2/meetingsArray.txt', JSON.stringify(meetings));
+fs.writeFileSync('/home/ubuntu/workspace/week3/meetingsArray.txt', JSON.stringify(meetings));
 
