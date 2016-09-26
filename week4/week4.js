@@ -10,23 +10,23 @@
 
 var request = require('request');
 
-request('aa-latLong.txt', function(error, response, body) {
-    var AA = JSON.parse(body);
+request('aa-latLong.json', function(error, response, body) {
+    var meetingData = JSON.parse(body);
 
     // Connection URL
-    var url = 'mongodb://' + process.env.IP + ':27017/AAMEETINGS';
+    var dataFile = process.env.IP + 'aa-latLong.json';
 
     // Retrieve
     var MongoClient = require('mongodb').MongoClient; // npm install mongodb
 
-    MongoClient.connect(url, function(err, db) {
+    MongoClient.connect(dataFile, function(err, db) {
         if (err) {return console.dir(err);}
 
-        var collection = db.collection('meeting');
+        var collection = db.collection('meetings');
 
         // THIS IS WHERE THE DOCUMENT(S) IS/ARE INSERTED TO MONGO:
-        for (var i=0; i < AA.meetingList.length; i++) {
-            collection.insert(AA.meetingList[i]);
+        for (var i=0; i < meetingData.length; i++) {
+            collection.insert(meetingData[i]);
             }
         db.close();
 
