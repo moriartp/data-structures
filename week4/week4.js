@@ -9,17 +9,20 @@
 //      db.stations.find().count()
 
 var request = require('request');
+var fs = require('fs');
 
 request('aa-latLong.json', function(error, response, body) {
     var meetingData = JSON.parse(body);
 
     // Connection URL
-    var dataFile = process.env.IP + 'aa-latLong.json';
+    var url = 'mongodb://' + process.env.IP + ':27017/aa';
+    // var database = process.env.IP + 'week4/aa';
+    // var dataFile = fs.readFile('https://raw.githubusercontent.com/moriartp/data-structures/master/week4/aa-latLong.json');
 
     // Retrieve
     var MongoClient = require('mongodb').MongoClient; // npm install mongodb
 
-    MongoClient.connect(dataFile, function(err, db) {
+    MongoClient.connect(url, function(err, db) {
         if (err) {return console.dir(err);}
 
         var collection = db.collection('meetings');
@@ -33,3 +36,5 @@ request('aa-latLong.json', function(error, response, body) {
     }); //MongoClient.connect
 
 }); //request
+
+// console.log(process.env.IP);
