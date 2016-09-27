@@ -15,7 +15,7 @@ request('https://raw.githubusercontent.com/moriartp/data-structures/master/week3
     var meetingData = JSON.parse(body);
 
     // Connection URL
-    var url = 'mongodb://localhost/:27017/week4';
+    var url = 'mongodb:// + process.env.IP + + ':27017/' + aa;
 
 
     // Retrieve
