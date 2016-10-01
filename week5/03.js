@@ -3,10 +3,10 @@ var request = require('request'); // npm install request
 var async = require('async'); // npm install async
 
 // SETTING ENVIRONMENT VARIABLES (in Linux): 
-// export NEW_VAR = "AIzaSyCQR8lPd8IwfdC0LPaSJ8FoX2jC1NPizns";////NO SPACES
+// export NEW_VAR = ////NO SPACES
 // printenv | grep NEW_VAR;
 // var apiKey = process.env.GMAKEY;
-var apiKey = 'AIzaSyCQR8lPd8IwfdC0LPaSJ8FoX2jC1NPizns';
+// var apiKey = xxx;
 
 var meetingsData = [];
 // var addresses = fs.readFile('/home/ubuntu/workspace/week5/data/m07meetings.txt', callback);
