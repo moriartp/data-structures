@@ -1,0 +1,26 @@
+meetingsOutput sample
+[{"address":"351 East 74th Street, New York, NY","day":"Saturday","startTime":"7:30 AM","endTime":"8:30 AM","latLong":{"lat":40.7695575,"lng":-73.9555091}}]
+
+
+mongodb documents sample
+
+{ "_id" : ObjectId("57fd735abd28370d3549b677"), "address" : "351 East 74th Street, New York, NY", "day" : "Saturday", "startTime" : "7:30 AM", "endTime" : "8:30 AM", "interest" : null, "latLong" : { "lat" : 40.7695575, "lng" : -73.9555091 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b678"), "address" : "48 East 80th Street, New York, NY", "day" : "Tuesday", "startTime" : "7:00 PM", "endTime" : "8:00 PM", "interest" : null, "latLong" : { "lat" : 40.7766859, "lng" : -73.9613107 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b679"), "address" : "184 East 76th Street, New York, NY", "day" : "Wednesday", "startTime" : "6:00 PM", "endTime" : "7:00 PM", "interest" : null, "latLong" : { "lat" : 40.772485, "lng" : -73.9595142 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b67a"), "address" : "351 East 74th Street, New York, NY", "day" : "Monday", "startTime" : "2:30 PM", "endTime" : "3:30 PM", "interest" : "Living Sober", "latLong" : { "lat" : 40.7695575, "lng" : -73.9555091 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b67b"), "address" : "351 East 74th Street, New York, NY", "day" : "Monday", "startTime" : "2:30 PM", "endTime" : "3:30 PM", "interest" : null, "latLong" : { "lat" : 40.7695575, "lng" : -73.9555091 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b67c"), "address" : "351 East 74th Street, New York, NY", "day" : "Monday", "startTime" : "2:30 PM", "endTime" : "3:30 PM", "interest" : null, "latLong" : { "lat" : 40.7695575, "lng" : -73.9555091 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b67d"), "address" : "351 East 74th Street, New York, NY", "day" : "Monday", "startTime" : "2:30 PM", "endTime" : "3:30 PM", "interest" : null, "latLong" : { "lat" : 40.7695575, "lng" : -73.9555091 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b67e"), "address" : "351 East 74th Street, New York, NY", "day" : "Monday", "startTime" : "2:30 PM", "endTime" : "3:30 PM", "interest" : null, "latLong" : { "lat" : 40.7695575, "lng" : -73.9555091 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b67f"), "address" : "1393 York Avenue, New York, NY", "day" : "Monday", "startTime" : "7:15 PM", "endTime" : "8:15 PM", "interest" : null, "latLong" : { "lat" : 40.7685172, "lng" : -73.95299829999999 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b680"), "address" : "520 Park Avenue, New York, NY", "day" : "Tuesday", "startTime" : "7:00 PM", "endTime" : "8:00 PM", "interest" : null, "latLong" : { "lat" : 40.7639511, "lng" : -73.9697422 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b681"), "address" : "337 E. 74th St., New York, NY", "day" : "Thursday", "startTime" : "7:00 PM", "endTime" : "8:00 PM", "interest" : null, "latLong" : { "lat" : 40.7695505, "lng" : -73.9559804 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b682"), "address" : "1157 Lexington Avenue, New York, NY", "day" : "Saturday", "startTime" : "6:00 PM", "endTime" : "7:00 PM", "interest" : null, "latLong" : { "lat" : 40.7753286, "lng" : -73.95819519999999 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b683"), "address" : "420 East 76th Street, New York, NY", "day" : "Friday", "startTime" : "6:30 PM", "endTime" : "7:30 PM", "interest" : null, "latLong" : { "lat" : 40.7697328, "lng" : -73.9530611 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b684"), "address" : "230 East 90th Street, New York, NY", "day" : "Sunday", "startTime" : "3:30 PM", "endTime" : "4:30 PM", "interest" : null, "latLong" : { "lat" : 40.7806471, "lng" : -73.9509674 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b685"), "address" : "65 East 89th Street, New York, NY", "day" : "Tuesday", "startTime" : "6:15 PM", "endTime" : "7:15 PM", "interest" : null, "latLong" : { "lat" : 40.7827448, "lng" : -73.9567008 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b686"), "address" : "865 Madison Avenue, New York, NY", "day" : "Sunday", "startTime" : "5:00 PM", "endTime" : "5:45 PM", "interest" : "Meditation", "latLong" : { "lat" : 40.7711264, "lng" : -73.96535639999999 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b687"), "address" : "865 Madison Avenue, New York, NY", "day" : "Sunday", "startTime" : "5:00 PM", "endTime" : "5:45 PM", "interest" : null, "latLong" : { "lat" : 40.7711264, "lng" : -73.96535639999999 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b688"), "address" : "865 Madison Avenue, New York, NY", "day" : "Sunday", "startTime" : "5:00 PM", "endTime" : "5:45 PM", "interest" : null, "latLong" : { "lat" : 40.7711264, "lng" : -73.96535639999999 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b689"), "address" : "865 Madison Avenue, New York, NY", "day" : "Sunday", "startTime" : "5:00 PM", "endTime" : "5:45 PM", "interest" : null, "latLong" : { "lat" : 40.7711264, "lng" : -73.96535639999999 } }
+{ "_id" : ObjectId("57fd735abd28370d3549b68a"), "address" : "1296 Lexington Avenue, New York, NY", "day" : "Monday", "startTime" : "7:15 AM", "endTime" : "8:15 AM", "interest" : null, "latLong" : { "lat" : 40.780699, "lng" : -73.954995 } }

@@ -21,21 +21,27 @@ async.eachSeries(addressesAlt, function(value, callback) {
     var apiRequest = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + value.split(' ').join('+') + '&key=' + apiKey;
     var thisMeeting = new Object;
     thisMeeting.address = value;
-    thisMeeting.start = JSON.parse(starts);
+    
+    // thisMeeting.start = JSON.parse(starts);
     // thisMeeting.end = ends;
     // thisMeeting.day = days;
     request(apiRequest, function(err, resp, body) {
-        if (err) {throw err;}
-        thisMeeting.latLong = JSON.parse(body).results[0].geometry.location;
-        // thisMeeting.start = JSON.parse(body).results[0].starts;
-        // thisMeeting.end = JSON.parse(body).results[0].ends;
-        // thisMeeting.day = JSON.parse(body).results[0].days;
-        meetingsData.push(thisMeeting);
+        console.log(resp);
+        // if (err) {throw err;}
+        // thisMeeting.latLong = JSON.parse(body).results[1].geometry.location;
+        // // thisMeeting.latLong = JSON.parse(body).results[0].geometry.location;
+        // // thisMeeting.lat = JSON.parse(body).results[0].latLong.geometry.location;
+        // // thisMeeting.lon = JSON.parse(body).lon[1].geometry.location;        
+        
+        // // thisMeeting.start = JSON.parse(body).results[0].starts;
+        // // thisMeeting.end = JSON.parse(body).results[0].ends;
+        // // thisMeeting.day = JSON.parse(body).results[0].days;
+        // meetingsData.push(thisMeeting);
     });
-    setTimeout(callback, 1000);
+    setTimeout(callback, 1300);
 }, function() {
-    console.log(meetingsData);
-    fs.writeFileSync('/home/ubuntu/workspace/week5/data/meetingsDataALL.txt', JSON.stringify(meetingsData));
+    // console.log(meetingsData);
+    // fs.writeFileSync('/home/ubuntu/workspace/week5/data/meetingsDataALL.txt', JSON.stringify(meetingsData));
 });
 
 //______________________________________________________
