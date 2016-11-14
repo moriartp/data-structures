@@ -46,5 +46,5 @@ async.eachSeries(addressesAlt, function(value, callback) {
     setTimeout(callback, 1500);
 }, function() {
     console.log(meetingsData);
-    fs.writeFileSync('/home/ubuntu/workspace/week3/data/aa-latLong.txt', JSON.stringify(meetingsData));
+    fs.writeFileSync('/home/ubuntu/workspace/week3/data/aa-latLong-test.txt', JSON.stringify(meetingsData));
 });
