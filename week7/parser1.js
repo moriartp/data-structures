@@ -6,9 +6,9 @@ var async = require('async');
 var asyncEachObject = require('async-each-object')
 
 // Variables
-var content = fs.readFileSync('/home/ubuntu/workspace/week1/aa/aa05.html');
+var content = fs.readFileSync('/home/ubuntu/workspace/week1/aa/aa04.html');
 var $ = cheerio.load(content);
-var apiKey = 'AIzaSyAN8M-vIsMaznmXFIlKRaoulhmZZ0HYnfA'; //process.env.GMAKEY;
+var apiKey = 'AIzaSyBlj1JdS068HKvQU2qvlW-knH9ZhDGETm0'; //process.env.GMAKEY;
 var meetings = [];
 
 // Select the table and run the script through every row
@@ -75,5 +75,5 @@ async.eachObject(meetings, function(value, key, callback) {
 }, function() {
     console.log(meetings);
     // Write the meetings data to output.txt
-    fs.writeFileSync('/home/ubuntu/workspace/week7/output/_05output.txt', JSON.stringify(meetings));
+    fs.writeFileSync('/home/ubuntu/workspace/week7/output/_04output.txt', JSON.stringify(meetings));
 });
