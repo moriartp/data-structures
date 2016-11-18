@@ -6,7 +6,7 @@ var async = require('async');
 var asyncEachObject = require('async-each-object')
 
 // Variables
-var content = fs.readFileSync('/home/ubuntu/workspace/week1/aa/aa03.html');
+var content = fs.readFileSync('/home/ubuntu/workspace/week1/aa/aa05.html');
 var $ = cheerio.load(content);
 var apiKey = 'AIzaSyAN8M-vIsMaznmXFIlKRaoulhmZZ0HYnfA'; //process.env.GMAKEY;
 var meetings = [];
@@ -70,10 +70,10 @@ async.eachObject(meetings, function(value, key, callback) {
         value.geo = JSON.parse(body).results[0].geometry.location;
         
     });
-    // Not sure but I think the the callback delay isn't working because the data came out immediately
-    setTimeout(callback, 5000);
+    // The callback delay is not working?????
+    setTimeout(callback, 15000);
 }, function() {
     console.log(meetings);
     // Write the meetings data to output.txt
-    fs.writeFileSync('/home/ubuntu/workspace/week7/output/_03output.txt', JSON.stringify(meetings));
+    fs.writeFileSync('/home/ubuntu/workspace/week7/output/_05output.txt', JSON.stringify(meetings));
 });
