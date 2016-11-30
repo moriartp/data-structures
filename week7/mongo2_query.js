@@ -15,35 +15,9 @@ MongoClient.connect(url, function(err, db) {
     var collection = db.collection(collName);
 
     collection.aggregate( [
-
-        { $unwind : "$meetingList" },
-        
-        { $match : { "meetingList.day_index" : 2 } },
-        
-        { $group : {  _id : { 
-            address : "$address",
-            geo : "$geo"
-        }, 
-            day : { $push : "$meetingList.day" },
-            startTime : { $push : "$meetingList.startTime" },
-            startTimeHour : { $push : "$meetingList.startTimeHour" },
-            endTime : { $push : "$meetingList.endTime" },
-            endHour : { $push : "$meetingList.endHour" },
-            interest : { $push : "$meetingList.interest" }
-        }},
-        
-        { $group : { _id : { geo : "$_id.geo" }, 
-                    meetingGroups : { $addToSet : {  meetingGroup : "$_id", 
-                                                meetings : {
-                                                day : "$day",
-                                                startTime : "$startTime",
-                                                startHours : "$startHours",
-                                                endTime : "$endTime",
-                                                endHours : "$endHours",
-                                                interest : "$interest"
-                                                }
-                    } }
-                    } }
+        { $group : { _id : "day_index" } },
+        { $match : { "address" : "209 East 16th Street, New York, NY" } },
+        { $sort : { "startHours" : 1 } }
         
          ]).toArray(function(err, docs) {
         if (err) {console.log(err);}
