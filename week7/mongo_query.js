@@ -25,7 +25,6 @@ var server = http.createServer(function(request, response) {
                 var endTime = [];
                 var endHours = [];                
                 
-                
                 var type = [];
                 var interest = [];
                 var meetings = [];
@@ -61,7 +60,7 @@ var server = http.createServer(function(request, response) {
     });
 
     response.writeHead(200, {"Content-Type": "text/html"});
-    response.end("Hello, world!");
+    response.end("engage");
 
 });
 
