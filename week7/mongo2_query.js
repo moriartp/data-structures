@@ -24,18 +24,28 @@ var server = http.createServer(function(request, response) {
 
 
         collection.aggregate( [
+            ///TODAY'S MEETINGS STARTING AFTER CURRENT TIME
             // { $match : { "day_index" : d_.getDay() } },
-            { $match : { "day_index" : { $gt : d_.getDay() - 1 , $lt : d_.getDay() + 2 } } },
             // { $match : { "startHours" : { $gt : d_.getHours() - 5 } } },
             
-            // {$or : [$match : [{day}, {$gt: time}], [$match : [{day+1}, {$lt: 5}] ]}
-            // {$or : [{$match : [{ "day_index" : d_.getDay() }, { "startHours" : { $gt : d_.getHours() - 5 } }}], [$match : [{ "day_index" : d_.getDay()+ }, { "startHours" : { $lt : d_.getHours() - 5 } }]] },
+            
+            ///TODAY & TOMORROW'S MEETINGS
+            // { $match : { "day_index" : { $gt : d_.getDay() - 1 , $lt : d_.getDay() + 2 } } },
+            
+            { $match: { $or: [ 
+                
+                { $and: [
+                { "day_index" : d_.getDay() }, 
+                { "startHours" : { $gt : d_.getHours() - 5 } }
+                 ] },
+                { $and: [
+                { "day_index": d_.getDay() + 1 }, 
+                { "startHours" : { $lt : d_.getHours() - 5 } }
+                 ] },
+                ] } },
            
-            //  {$or: [{expires: {$gte: new Date()}}, {expires: null}]}
-            //  {$or: [{ "day_index" : d_.getDay() }, { "day_index" : d_.getDay()+1 }]},
            
-           
-            { $sort : { "startHours" : 1 } },
+            { $sort : { day_index : 1, "startHours" : 1 } },
 
             { 
                 $group : 
