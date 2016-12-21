@@ -6,9 +6,7 @@ For Final Assignment 2 I was provided with a tilt switch, and an arduino board, 
 ![switch](https://static.bocoup.com/blog/tilt-sensor-breadboard.png)
 
 ##setup
-The switch was setup to detect my physical presence at my office workstation. The device rested on my actual desktop, and could be flipped to indicate if I am "in" or "out" of the office. The aim of the project was to go beyond the log of scheduled meetings to make generate truer probability estimates about what time of day I am likely to be in my office. Beyond scheduled meetings, this data also reflects some of the informal business processes that might impact the probability of finding me at my desk at a given hour of the day. 
-
-The below images illustrate the setup of the device.
+The switch was setup to detect my physical presence at my office workstation. The device rested on my actual desktop, and could be flipped to indicate if I am "in" or "out" of the office. The aim of the project was to go beyond the log of scheduled meetings to make generate truer probability estimates about what time of day I am likely to be in my office. Beyond scheduled meetings, this data also reflects some of the informal business processes that might impact the probability of finding me at my desk at a given hour of the day. The below images illustrate the setup of the device.
 ![setup](images/02_setupA_2.jpg)
 ![setup](images/02_setupB_2.jpg)
 ![setup](images/02_setupC_2.jpg)
