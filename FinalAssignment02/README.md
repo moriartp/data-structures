@@ -12,12 +12,12 @@ The below images illustrate the setup of the device.
 ![setup](images/02_setupA.jpg)
 ![setup](images/02_setupB.jpg)
 ![setup](images/02_setupC.jpg)
-![setup](images/02_setupD.jpg)
 
 ##data collection
-Suited for both analog and digital data capture, I elected a digital configuration. At 30 seconds intervals, the device reported/inserted timestamp, hour, minute, and binary 0/1 values (indicating presince) into a postgreSQL database hosted on Amazon Web Services. The below image illustrates a log of these insertion events.
+Suited for both analog and digital data capture, I elected a digital configuration. At 30 seconds intervals, the device reported/inserted timestamp, hour, minute, and binary 0/1 values (indicating presence) into a postgreSQL database hosted on Amazon Web Services. The below image illustrates a log of these insertion events.
 
 ![insert](images/03_query.jpg)
+![insert](images/03_queryB.tiff)
 
 ##api
 Following collection, I developed an API that provided per hour averages of the values collected, resulting in probability estimates for my physical presence at my office workstation. A sample of the API return is illustrated below:
