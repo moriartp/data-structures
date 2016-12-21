@@ -22,6 +22,7 @@
     <script>
         var latNow = 40.771448;
         var longNow = -73.961641;
+        var google;/////do i need to add this?????
 
         function initialize() {
             var mapOptions = {
@@ -98,40 +99,41 @@
                 '</div>';
             for (var i = 0; i < cont.meetingGroups.length; i++) {
             if (i == 0) {
-                contentHolder = contentHolder + '<h2>' + cont.meetingGroups[i].groupInfo.meetingAddress1.substr(0, cont.meetingGroups[i].groupInfo.meetingAddress1.indexOf(',')) + '</h2>';
+                // contentHolder = contentHolder + '<h2>' + cont.meetingGroups[i].groupInfo.meetingAddress1.substr(0, cont.meetingGroups[i].groupInfo.meetingAddress1.indexOf(',')) + '</h2>';
+                contentHolder = contentHolder + '<h2>' + cont.meetings_at_site[i] + '</h2>';
             } 
                 contentHolder = contentHolder + '<h1 id="firstHeading" class="firstHeading">';
-                contentHolder = contentHolder + cont.meetingGroups[i].groupInfo.meetingName + '</h1>';
+                contentHolder = contentHolder + cont.meetings_at_site[i] + '</h1>';
                 
-                for (var j = 0; j < cont.meetingGroups[i].meetingType.length; j++) {
-                    var mt, si;
-                    if (cont.meetingGroups[i].meetingType[j] == "BB") {
-                        mt = "Big Book ";
-                    }
-                    else if (cont.meetingGroups[i].meetingType[j] == "B") {
-                        mt = "Beginners ";
-                    }
-                    else if (cont.meetingGroups[i].meetingType[j] == "C") {
-                        mt = "Closed Discussion ";
-                    }
-                    else if (cont.meetingGroups[i].meetingType[j] == "S") {
-                        mt = "Step ";
-                    }
-                    else if (cont.meetingGroups[i].meetingType[j] == "T") {
-                        mt = "Tradition ";
-                    }
-                    else if (cont.meetingGroups[i].meetingType[j] == "O") {
-                        mt = "Open Meeting ";
-                    }
-                    else if (cont.meetingGroups[i].meetingType[j] == "OD") {
-                        mt = "Open Discussion ";
-                    }
-                    else {
-                        mt = "";
-                    }
+                // for (var j = 0; j < cont.meetingGroups[i].meetingType.length; j++) {
+                //     var mt, si;
+                //     if (cont.meetingGroups[i].meetingType[j] == "BB") {
+                //         mt = "Big Book ";
+                //     }
+                //     else if (cont.meetingGroups[i].meetingType[j] == "B") {
+                //         mt = "Beginners ";
+                //     }
+                //     else if (cont.meetingGroups[i].meetingType[j] == "C") {
+                //         mt = "Closed Discussion ";
+                //     }
+                //     else if (cont.meetingGroups[i].meetingType[j] == "S") {
+                //         mt = "Step ";
+                //     }
+                //     else if (cont.meetingGroups[i].meetingType[j] == "T") {
+                //         mt = "Tradition ";
+                //     }
+                //     else if (cont.meetingGroups[i].meetingType[j] == "O") {
+                //         mt = "Open Meeting ";
+                //     }
+                //     else if (cont.meetingGroups[i].meetingType[j] == "OD") {
+                //         mt = "Open Discussion ";
+                //     }
+                //     else {
+                //         mt = "";
+                //     }
 
-                    contentHolder = contentHolder + cont.meetingGroups[i].meetingStartTime[j] + ' ' + mt + '<br>';
-                }
+                //     contentHolder = contentHolder + cont.meetingGroups[i].meetingStartTime[j] + ' ' + mt + '<br>';
+                // }
                 contentHolder = contentHolder + '</p>';
                 contentHolder = contentHolder + '<div class="iw-bottom-gradient"></div>';
             }
@@ -146,7 +148,7 @@
 
             for (var i = 0; i < locations.length; i++) {
                 var meeting = locations[i];
-                var myLatLng = new google.maps.LatLng(meeting._id.latLong[0], meeting._id.latLong[1]);
+                var myLatLng = new google.maps.LatLng(meeting._id.geo_coor[0], meeting._id.geo_coor[1]);
 
                 var contentWindow = makeContent(meetings[i]);
 

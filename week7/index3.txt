@@ -1,0 +1,85 @@
+;
+
+        function makeContent(cont) {
+            var contentHolder = '<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>';
+            for (var i = 0; i < cont.meetings_at_site.length; i++) {
+            if (i == 0) {
+                contentHolder = contentHolder + '<h2>' + cont._id.site.address + '</h2>';
+            } 
+                //contentHolder = contentHolder + '<h1 id="firstHeading" class="firstHeading">';
+                //contentHolder = contentHolder + cont._id.site.address + '</h1>';
+                
+                for (var j = 0; j < cont.meetings_at_site[i].type.length; j++) {
+                    var mt, si;
+                    if (cont.meetings_at_site[i].type[j] == "BB") {
+                        mt = "Big Book ";
+                    }
+                    else if (cont.meetings_at_site[i].type[j] == "B") {
+                        mt = "Beginners ";
+                    }
+                    else if (cont.meetings_at_site[i].type[j] == "C") {
+                        mt = "Closed Discussion ";
+                    }
+                    else if (cont.meetings_at_site[i].type[j] == "S") {
+                        mt = "Step ";
+                    }
+                    else if (cont.meetings_at_site[i].type[j] == "T") {
+                        mt = "Tradition ";
+                    }
+                    else if (cont.meetings_at_site[i].type[j] == "O") {
+                        mt = "Open Meeting ";
+                    }
+                    else if (cont.meetings_at_site[i].type[j] == "OD") {
+                        mt = "Open Discussion ";
+                    }
+                    else {
+                        mt = "";
+                    }
+
+                    contentHolder = contentHolder + cont.meetings_at_site[i].dayString + ' ' + cont.meetings_at_site[i].startTime + ' ' + mt + '<br>';
+                }
+                contentHolder = contentHolder + '</p>';
+                contentHolder = contentHolder + '<div class="iw-bottom-gradient"></div>';
+            }
+            return contentHolder;
+        }
+
+
+        function setMarkers(map, locations) {
+            // Add markers to the map
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 200
+            });
+
+            for (var i = 0; i < locations.length; i++) {
+                var meeting = locations[i];
+             // var myLatLng = new google.maps.LatLng(meeting._id.geo_coor[0], meeting._id.geo_coor[1]);
+                var myLatLng = new google.maps.LatLng(meeting._id.site_loc.geo_coor.lat, meeting._id.site_loc.geo_coor.lng);
+
+                var contentWindow = makeContent(meetings[i]);
+
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: "Click for meeting info",
+                    content: contentWindow,
+                });
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent(this.content);
+                    infowindow.open(map, this);
+                });
+            }
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <div id="map-canvas"></div>
+</body>
+
+</html>
