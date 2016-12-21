@@ -23,6 +23,8 @@ The output from this effort is logged in the parser_output dir.
 ##inserter
 After setting up a mongo database in cloud9, the inserter.js file was then used to insert the meeting data as documents in a mongo collection. Note that after insertion into the database and additional variable was created using the mongo query language to convert the day values into numeric vaules 0-6. Additionally some of the values for startHours were modified to account form an error in the hours conversion. An illustration of these documents is shown below:
 ![db](images/mongo_collection.jpg)
+
+up close view...
 ![db](images/mongo_collection_sample.jpg)
 
 
@@ -36,7 +38,12 @@ Using the mongo query language to create an aggregation piple, the 04_aggregator
 An illustration of this output is shown below:
 ![api](images/mongo_api_output.jpg)
 
+up close view...
+![api](images/mongo_api_output_sample.jpg)
+
 ### application
 Finally, a front end interface was develop with gogle maps to provide marker locations for each of the particular meeting site venue. The marker tooltip provide details about the day of the meeting, the startTime, and the type of meeting to be held. A screen shot of this working interface it illustrated below:
-![app](images/final2.jpg)
 ![app](images/final.jpg)
+
+up close view...
+![app](images/final2.jpg)
