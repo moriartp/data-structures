@@ -1,1 +1,1 @@
-![setup](/images/01.jpg)
+![setup][images/01.jpg]
